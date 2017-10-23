@@ -1,5 +1,0 @@
-/**
-*hshsh
-*/
- package example.com
-
