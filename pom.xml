@@ -205,6 +205,40 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+  <distributionManagement>
+                <repository>
+                        <id>internal</id>
+                        <url>http://127.0.0.1:8082/repository/internal/</url>
+                </repository>
+        </distributionManagement>
+
+        <repositories>
+                <repository>
+                        <id>internal</id>
+                        <name>Archive Managed Internal Repository</name>
+                        <url>http://127.0.0.1:8082/repository/internal/</url>
+                        <releases>
+                                <enabled>true</enabled>
+                        </releases>
+                        <snapshots>
+                                <enabled>false</enabled>
+                        </snapshots>
+                </repository>
+        </repositories>
+
+        <pluginRepositories>
+                <pluginRepository>
+                        <id>internal</id>
+                        <name>Archive Managed Internal Repository</name>
+                        <url>http://127.0.0.1:8082/repository/internal/</url>
+                        <releases>
+                                <enabled>true</enabled>
+                        </releases>
+                        <snapshots>
+                                <enabled>false</enabled>
+                        </snapshots>
+                </pluginRepository>
+        </pluginRepositories>
 
   <scm>
     <connection>scm:git:git@github.com:jleetutorial/maven-project.git</connection>
