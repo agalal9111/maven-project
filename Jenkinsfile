@@ -8,8 +8,8 @@ pipeline {
                 }
                 post{
                     success{
-                        echo 'now archiving'
-                        archiveArtifacts artifacts: '**/target/*.war'
+                              echo 'now archiving'
+                              archiveArtifacts artifacts: '**/target/*.war'
                         
 
                     }
@@ -22,20 +22,24 @@ pipeline {
                 
 
             }
-       stage('deploy to prod'){
+            stage('deploy to prod'){
                 steps{
-               timeout(time:5, unit:'days'){
-                   input message 'please approve deployment to prod'
+                        timeout(time:5, unit:'days'){
+                        input message 'please approve deployment to prod'
                 }
-               build job: 'deploy-to-prod'
+                        build job: 'deploy-to-prod'
             }
-                 post{
-                       success{ echo 'deployed to prod successfull'}
-                       failure{ echo 'failed to deploy tp prod'}
+                post{
+                    success{
+                              echo 'deployed to prod successfull'
+                         }
+                    failure{
+                              echo 'failed to deploy tp prod'
+                        }
 
            }
        }
 
-       }
+    }   
 
-        }
+}
